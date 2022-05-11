@@ -1,6 +1,6 @@
 import phoneReducer, {
   addNumberActionCreator,
-  callStatusToggleActionCreator,
+  callStatusToggleActionCreator as onCallStatus,
   deleteNumberActionCreator,
 } from "./phoneSlice";
 
@@ -19,12 +19,13 @@ describe("given phoneReducer", () => {
     });
   });
 
-  describe("When its callStatusToggle it's dispatched and the oncall property on the state it's false", () => {
+  describe("When its onCallStatus it's dispatched with a payload tru eand the oncall property on the state it's false", () => {
     test("Then it should return a new state with the oncall property as true", () => {
       const initialPhoneState = { numbers: [], onCall: false };
       const expectedPhoneState = { numbers: [], onCall: true };
+      const receivedOnCallStatus = true;
 
-      const toggleAction = callStatusToggleActionCreator();
+      const toggleAction = onCallStatus(receivedOnCallStatus);
 
       const newPhoneState = phoneReducer(initialPhoneState, toggleAction);
 
