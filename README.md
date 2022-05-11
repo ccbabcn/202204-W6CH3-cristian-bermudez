@@ -1,3 +1,9 @@
-# Testing teléfono
+## Capa de datos
 
-Aquí tienes la aplicación del teléfono funcionando. Testéala y consigue como mínimo un 80% de coverage de statements.
+- Números (array)
+- En llamada (boolean)
+
+## Modificaciones
+
+- añadir numero introducido
+- toggleas el estado de en llamda
