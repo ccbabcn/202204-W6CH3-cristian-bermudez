@@ -13,7 +13,7 @@ const phoneSlice = createSlice({
     }),
     deleteNumber: (phoneState) => ({
       ...phoneState,
-      number: [...phoneState.number.slice(0, -1)],
+      numbers: [...phoneState.numbers.slice(0, -1)],
     }),
     callStatusToggle: (phoneState) => ({
       ...phoneState,
@@ -25,6 +25,7 @@ const phoneSlice = createSlice({
 export const {
   addNumber: addNumberActionCreator,
   callStatusToggle: callStatusToggleActionCreator,
+  deleteNumber: deleteNumberActionCreator,
 } = phoneSlice.actions;
 
 export default phoneSlice.reducer;
