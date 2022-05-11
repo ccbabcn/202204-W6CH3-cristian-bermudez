@@ -6,4 +6,6 @@
 ## Modificaciones
 
 - añadir numero introducido
-- toggleas el estado de en llamda
+- borrar un numero itroducido
+
+- togglear el estado de en llamda
