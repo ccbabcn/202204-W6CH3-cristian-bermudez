@@ -11,9 +11,16 @@ const phoneSlice = createSlice({
       ...phoneState,
       numbers: [...phoneState.numbers, action.payload],
     }),
+    callStatusToggle: (phoneState) => ({
+      ...phoneState,
+      onCall: !phoneState.onCall,
+    }),
   },
 });
 
-export const { addNumber: addNumberActionCreator } = phoneSlice.actions;
+export const {
+  addNumber: addNumberActionCreator,
+  callStatusToggle: callStatusToggleActionCreator,
+} = phoneSlice.actions;
 
 export default phoneSlice.reducer;
