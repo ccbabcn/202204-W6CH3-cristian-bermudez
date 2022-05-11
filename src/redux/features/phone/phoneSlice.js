@@ -11,6 +11,10 @@ const phoneSlice = createSlice({
       ...phoneState,
       numbers: [...phoneState.numbers, action.payload],
     }),
+    deleteNumber: (phoneState) => ({
+      ...phoneState,
+      number: [...phoneState.number.slice(0, -1)],
+    }),
     callStatusToggle: (phoneState) => ({
       ...phoneState,
       onCall: !phoneState.onCall,
