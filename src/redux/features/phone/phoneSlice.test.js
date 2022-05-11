@@ -1,6 +1,7 @@
 import phoneReducer, {
   addNumberActionCreator,
   callStatusToggleActionCreator,
+  deleteNumberActionCreator,
 } from "./phoneSlice";
 
 describe("given phoneReducer", () => {
@@ -26,6 +27,19 @@ describe("given phoneReducer", () => {
       const toggleAction = callStatusToggleActionCreator();
 
       const newPhoneState = phoneReducer(initialPhoneState, toggleAction);
+
+      expect(newPhoneState).toEqual(expectedPhoneState);
+    });
+  });
+
+  describe("When its deleteNumber it's dispatched and the numbers property on the state it's [1,2,3,4,5]", () => {
+    test("Then it should return a new state with the numbers property as [1,2,3,4]", () => {
+      const initialPhoneState = { numbers: [1, 2, 3, 4, 5], onCall: false };
+      const expectedPhoneState = { numbers: [1, 2, 3, 4], onCall: false };
+
+      const deleteAction = deleteNumberActionCreator();
+
+      const newPhoneState = phoneReducer(initialPhoneState, deleteAction);
 
       expect(newPhoneState).toEqual(expectedPhoneState);
     });
